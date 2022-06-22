@@ -15,10 +15,10 @@ const apiURL = "https://mock-api.driven.com.br/api/v6/uol/";
  function refreshMessages() {
     const promise = axios.get(apiURL + "messages");
     promise.then((x) => {
-      messages = x;
+      console.log(x)
     });
   }
-  
+
 main();
 function main() {
   refreshMessages();
