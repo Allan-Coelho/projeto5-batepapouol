@@ -1,11 +1,6 @@
 let messages = [];
 const apiURL = "https://mock-api.driven.com.br/api/v6/uol/";
 
-main();
-function main() {
-  refreshMessages();
-  console.log(messages);
-}
 
 /**
  * Essa função retorna um array com as menssagens do servidor;
@@ -17,9 +12,16 @@ function main() {
  * @returns {String} message.type Tipo da mensagem;
  * @returns {String} message.time Quando a mensagem foi enviada;
  */
-function refreshMessages() {
-  const promise = axios.get(apiURL + "messages");
-  promise.then((x) => {
-    messages = x;
-  });
+ function refreshMessages() {
+    const promise = axios.get(apiURL + "messages");
+    promise.then((x) => {
+      messages = x;
+    });
+  }
+  
+main();
+function main() {
+  refreshMessages();
+  console.log(messages);
 }
+
