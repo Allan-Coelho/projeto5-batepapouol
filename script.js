@@ -23,5 +23,3 @@ function refreshMessages() {
     messages = x;
   });
 }
-
-getMessages();
