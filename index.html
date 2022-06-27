@@ -15,28 +15,13 @@
       <img src="./files/logo.png" alt="logo" />
       <ion-icon name="people"></ion-icon>
     </div>
-    <div class="container">
-      <div class="message status">
-        <span class="time">(18:00:20)</span>
-        <span><span class="bold">Fualano</span> texto</span>
-      </div>
-      <div class="message private">
-        <span class="time">(18:00:20)</span>
-        <span><span class="bold">Fulano </span> reservadamente para <span class="bold">Fulaninha</span>: texto</span>
-      </div>
-      <div class="message standard">
-        <span class="time">(18:00:20)</span>
-        <span><span class="bold">Fulano </span> para <span class="bold">Todos</span></span>
-      </div>
-    </div>
+    <div class="container"></div>
     <div class="footer">
-      <input
-        type="text"
-        name="userMessageBox"
-        id=""
-        placeholder="Excreva aqui..."
-      />
-      <ion-icon name="paper-plane-outline"></ion-icon>
+      <input type="text" name="userMessageBox" placeholder="Excreva aqui..." />
+      <ion-icon
+        name="paper-plane-outline"
+        onclick="sendStandardMessage()"
+      ></ion-icon>
     </div>
 
     <!-- <ion-icon name="people"></ion-icon> 
