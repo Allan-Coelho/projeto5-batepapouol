@@ -1,33 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+.header,
+.footer {
+  position: sticky;
+  right: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  width: 100%;
+  padding: 0px 22px;
+}
+
+.header {
+  top: 0;
+  justify-content: space-between;
+}
+
+.header ion-icon {
+  height: 45px;
+  width: 45px;
+}
+
+.header img {
+  height: 53px;
+}
+
+.footer {
+  bottom: 0;
+  justify-content: space-between;
+  padding: 0 17px;
+}
+
+.footer input {
+  height: 30px;
+  width: 100%;
+  border: none;
+}
+
+.footer input::placeholder {
+  font-size: 18px;
+  font-style: italic;
+  color: black;
+}
+
+.footer input:focus {
+  border: none;
+}
+
+.footer ion-icon {
+  height: 26px;
+  width: 26px;
+  margin-right: 17px;
 }
 
 .container {
-    width: 100vw;
-    background-color: #E5E5E5;
+  width: 100vw;
+  margin-top: 4px;
 }
 
 .message {
-    min-height: 40px;
-    font-size: 14px;
-    font-weight: 400;
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: center;
+  margin: 4px 0px 0px 0px;
+  padding: 0px 8px;
+  word-break: break-all;
 }
 
 .status {
-    background-color: #DCDCDC;
+  background-color: #dcdcdc;
 }
 
 .private {
-    background-color: #FFDEDE;
+  background-color: #ffdede;
 }
 
 .standard {
-    background-color: white;
+  background-color: white;
+}
+
+.time {
+  color: #aaaaaa;
+  width: 82px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+span {
+  margin-right: 3px;
+}
+
+p {
+  line-height: 16px;
 }
