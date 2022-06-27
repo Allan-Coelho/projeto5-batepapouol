@@ -115,18 +115,17 @@ function renderMessages() {
 
   bodyContainer.innerHTML = "";
   for (let index = 0, len = serverMessages.length; index < len; index++) {
-    newMessage(serverMessages[index]);
+    if (
+      serverMessages[index].to === "Todos" ||
+      serverMessages[index].to === username
+    )
+      newMessage(serverMessages[index]);
   }
   scrollToLastMessage();
 }
 
 function scrollToLastMessage() {
   const renderedMessages = bodyContainer.children;
-
-  if (renderMessages.length === 0) {
-    return;
-  }
-
   renderedMessages[renderedMessages.length - 1].scrollIntoView();
 }
 
@@ -152,6 +151,7 @@ function joinUser() {
       refreshServerMessages();
       setInterval(refreshServerMessages, 3000);
       setInterval(ping, 5000);
+      setupToSendMessages();
     })
     .catch(() => {
       isOnline = false;
@@ -162,7 +162,17 @@ function joinUser() {
     });
 }
 
-function setupToSendMessages() {}
+function setupToSendMessages() {
+  document.addEventListener(
+    "keypress",
+    function (e) {
+      if (e.key === "Enter") {
+        sendStandardMessage();
+      }
+    },
+    false
+  );
+}
 
 function sendStandardMessage() {
   const inputBox = document.querySelector(".footer input");
@@ -181,7 +191,11 @@ function sendStandardMessage() {
       type: "message",
     })
     .then(() => {
+      refreshServerMessages();
       console.log("Mensagem enviada com sucesso");
+    })
+    .catch(() => {
+      window.location.reload();
     });
   inputBox.value = "";
 }
